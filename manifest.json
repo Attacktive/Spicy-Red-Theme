@@ -1,0 +1,25 @@
+{
+	"manifest_version": 3,
+	"name": "Spicy Red",
+	"version": "1.0.0",
+	"description": "Spicy Red; taken from Microsoft Edge",
+	"author": "Attacktive",
+	"theme": {
+		"colors": {
+			"bookmark_text": [255, 255, 255],
+			"frame": [87, 15, 19],
+			"ntp_background": [226, 63, 63],
+			"ntp_text": [193, 153, 153],
+			"tab_background_text": [255, 255, 255],
+			"tab_background_text_inactive": [255, 255, 255],
+			"tab_background_text_incognito": [255, 255, 255],
+			"tab_background_text_incognito_inactive": [255, 255, 255],
+			"tab_text": [255, 255, 255],
+			"toolbar": [134, 23, 31]
+		},
+		"tints": {
+			"buttons": [0.9, 1, 1],
+			"frame_inactive": [134, 23, 31]
+		}
+	}
+}
