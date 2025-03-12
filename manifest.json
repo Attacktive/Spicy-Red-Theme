@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "Spicy Red",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Spicy Red; taken from Microsoft Edge",
 	"author": "Attacktive",
 	"theme": {
