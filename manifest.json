@@ -8,7 +8,7 @@
 		"colors": {
 			"bookmark_text": [255, 255, 255],
 			"frame": [87, 15, 19],
-			"ntp_background": [226, 63, 63],
+			"ntp_background": [87, 15, 19],
 			"ntp_text": [193, 153, 153],
 			"tab_background_text": [255, 255, 255],
 			"tab_background_text_inactive": [255, 255, 255],
