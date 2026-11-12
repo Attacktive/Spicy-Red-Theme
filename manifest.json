@@ -8,6 +8,7 @@
 		"colors": {
 			"bookmark_text": [255, 255, 255],
 			"frame": [87, 15, 19],
+			"frame_inactive": [134, 23, 31],
 			"ntp_background": [87, 15, 19],
 			"ntp_text": [193, 153, 153],
 			"tab_background_text": [255, 255, 255],
@@ -18,8 +19,7 @@
 			"toolbar": [134, 23, 31]
 		},
 		"tints": {
-			"buttons": [0.9, 1, 1],
-			"frame_inactive": [134, 23, 31]
+			"buttons": [0.9, 1, 1]
 		}
 	}
 }
