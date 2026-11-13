@@ -1,0 +1,37 @@
+name: 'Release'
+on:
+  push:
+    tags:
+      - '**'
+permissions:
+  contents: 'write'
+jobs:
+  release:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v7'
+      - name: 'Setup Node.js'
+        uses: 'actions/setup-node@v7'
+        with:
+          node-version: '24'
+      - name: 'Package CRX and ZIP'
+        env:
+          CRX_PRIVATE_KEY: ${{ secrets.CRX_PRIVATE_KEY }}
+        run: |
+          if [ -z "${CRX_PRIVATE_KEY}" ]; then
+            echo 'CRX_PRIVATE_KEY secret is not set' >&2
+            exit 1
+          fi
+          mkdir -p staging dist
+          cp manifest.json LICENSE staging/
+          umask 077
+          printf '%s\n' "${CRX_PRIVATE_KEY}" > "${RUNNER_TEMP}/crx.pem"
+          trap 'rm -f "${RUNNER_TEMP}/crx.pem"' EXIT
+          npx --yes crx3@2.0.0 --key "${RUNNER_TEMP}/crx.pem" --crx "dist/spicy-red-${GITHUB_REF_NAME}.crx" --zip "dist/spicy-red-${GITHUB_REF_NAME}.zip" -- staging
+      - name: 'Create Release'
+        uses: 'softprops/action-gh-release@8a0cd651e5b2365bd640854a3fa5dfc70e4875f3'
+        with:
+          files: 'dist/*'
+          fail_on_unmatched_files: true
+          generate_release_notes: true
